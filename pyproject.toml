@@ -1,0 +1,29 @@
+[project]
+name = "ai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "ipykernel>=6.29.5",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.1",
+    "numpy>=2.2.5",
+    "pandas>=2.2.3",
+    "polars>=1.27.1",
+    "requests>=2.32.3",
+    "tinygrad",
+]
+
+[dependency-groups]
+dev = ["poethepoet>=0.34.0", "ruff>=0.11.6"]
+
+[tool.uv]
+
+[tool.uv.sources]
+tinygrad = { git = "https://github.com/tinygrad/tinygrad" }
+
+[tool.poe.tasks]
+main = "src/main.py"
+format = "ruff format src"
+lint = "ruff check --fix src"
