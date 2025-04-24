@@ -1,11 +1,11 @@
 from tinygrad import Device
 
-from networks.mnist import run_mnist
+from networks.mnist import train_mnist
 
 
 def main():
     print(f"Current Device: {Device.DEFAULT}")
-    run_mnist()
+    train_mnist()
 
 
 if __name__ == "__main__":
