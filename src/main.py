@@ -1,6 +1,6 @@
 from tinygrad import Device
 
-from networks.mnist import train_mnist
+from runner.mnist_classifier import train_mnist
 
 
 def main():
