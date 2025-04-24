@@ -1,15 +1,15 @@
 from tinygrad import Tensor, nn, TinyJit
 from lib.datasets import load_dataset
-from networks.mnist_classifier import MNISTClassifier
+from networks.cifar_classifier import Cifar10Classifier
 
 
-def train_mnist(steps=1000):
-    print("=== Running MNIST Classifier Model ===")
-    print("Loading MNIST Dataset...")
-    X_train, Y_train, X_test, Y_test = load_dataset("mnist")
-    print("Loaded MNIST Dataset")
+def train_cifar10_classifier(steps=1000):
+    print("=== Running Cifar10 Classifier Model ===")
+    print("Loading Cifar10 Dataset...")
+    X_train, Y_train, X_test, Y_test = load_dataset("cifar")
+    print("Loaded Cifar10 Dataset")
 
-    model = MNISTClassifier()
+    model = Cifar10Classifier()
 
     print("=================")
     optim = nn.optim.Adam(nn.state.get_parameters(model))
